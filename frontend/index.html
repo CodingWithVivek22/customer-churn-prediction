@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Churn Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Customer Churn Prediction</h1>
+
+        <p class="subtitle">
+            Enter customer details to predict the probability of churn.
+        </p>
+
+        <form id="predictionForm">
+
+            <!-- Gender -->
+            <div class="field">
+                <label for="gender">Gender</label>
+
+                <select id="gender" name="gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+
+            <!-- Senior Citizen -->
+            <div class="field">
+                <label for="SeniorCitizen">Senior Citizen</label>
+
+                <select id="SeniorCitizen" name="SeniorCitizen">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+
+            <!-- Partner -->
+            <div class="field">
+                <label for="Partner">Partner</label>
+
+                <select id="Partner" name="Partner">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Dependents -->
+            <div class="field">
+                <label for="Dependents">Dependents</label>
+
+                <select id="Dependents" name="Dependents">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Tenure -->
+            <div class="field">
+                <label for="tenure">Tenure (months)</label>
+
+                <input type="number" id="tenure" name="tenure" min="0" required>
+            </div>
+
+
+            <!-- Phone Service -->
+            <div class="field">
+                <label for="PhoneService">Phone Service</label>
+
+                <select id="PhoneService" name="PhoneService">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Multiple Lines -->
+            <div class="field">
+                <label for="MultipleLines">Multiple Lines</label>
+
+                <select id="MultipleLines" name="MultipleLines">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Online Security -->
+            <div class="field">
+                <label for="OnlineSecurity">Online Security</label>
+
+                <select id="OnlineSecurity" name="OnlineSecurity">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Online Backup -->
+            <div class="field">
+                <label for="OnlineBackup">Online Backup</label>
+
+                <select id="OnlineBackup" name="OnlineBackup">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Device Protection -->
+            <div class="field">
+                <label for="DeviceProtection">Device Protection</label>
+
+                <select id="DeviceProtection" name="DeviceProtection">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Tech Support -->
+            <div class="field">
+                <label for="TechSupport">Tech Support</label>
+
+                <select id="TechSupport" name="TechSupport">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Streaming TV -->
+            <div class="field">
+                <label for="StreamingTV">Streaming TV</label>
+
+                <select id="StreamingTV" name="StreamingTV">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Streaming Movies -->
+            <div class="field">
+                <label for="StreamingMovies">Streaming Movies</label>
+
+                <select id="StreamingMovies" name="StreamingMovies">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Contract -->
+            <div class="field">
+                <label for="Contract">Contract</label>
+
+                <select id="Contract" name="Contract">
+                    <option value="Month-to-month">Month-to-month</option>
+                    <option value="One year">One year</option>
+                    <option value="Two year">Two year</option>
+                </select>
+            </div>
+
+
+            <!-- Paperless Billing -->
+            <div class="field">
+                <label for="PaperlessBilling">Paperless Billing</label>
+
+                <select id="PaperlessBilling" name="PaperlessBilling">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+
+            <!-- Monthly Charges -->
+            <div class="field">
+                <label for="MonthlyCharges">Monthly Charges</label>
+
+                <input type="number" id="MonthlyCharges" name="MonthlyCharges" step="0.01" min="0" required>
+            </div>
+
+
+            <!-- Total Charges -->
+            <div class="field">
+                <label for="TotalCharges">Total Charges</label>
+
+                <input type="number" id="TotalCharges" name="TotalCharges" step="0.01" min="0" required>
+            </div>
+
+
+            <!-- Internet Service -->
+            <div class="field">
+                <label for="InternetService">Internet Service</label>
+
+                <select id="InternetService" name="InternetService">
+
+                    <option value="DSL">DSL</option>
+
+                    <option value="Fiber optic">
+                        Fiber optic
+                    </option>
+
+                    <option value="No">No</option>
+
+                </select>
+            </div>
+
+
+            <!-- Payment Method -->
+            <div class="field">
+                <label for="PaymentMethod">Payment Method</label>
+
+                <select id="PaymentMethod" name="PaymentMethod">
+
+                    <option value="Bank transfer (automatic)">
+                        Bank transfer (automatic)
+                    </option>
+
+                    <option value="Credit card (automatic)">
+                        Credit card (automatic)
+                    </option>
+
+                    <option value="Electronic check">
+                        Electronic check
+                    </option>
+
+                    <option value="Mailed check">
+                        Mailed check
+                    </option>
+
+                </select>
+            </div>
+
+
+            <button type="submit" id="predictButton">
+                Predict Churn
+            </button>
+
+        </form>
+
+
+        <!-- Result -->
+        <div id="result">
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
