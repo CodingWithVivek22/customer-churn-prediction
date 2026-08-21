@@ -15,8 +15,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    "http://127.0.0.1:5500",
-    "https://codingwithvivek22.github.io",
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "https://codingwithvivek22.github.io"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
