@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from typing import Literal
 
 from fastapi import FastAPI
@@ -19,9 +21,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-scaler = joblib.load("../model/scaler.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+scaler = joblib.load(BASE_DIR / "../model/scaler.pkl")
 
-with open("../model/feature_columns.json", "r") as f:
+with open(BASE_DIR / "../model/feature_columns.json", "r") as f:
     feature_columns = json.load(f)
 
 import torch
@@ -51,7 +54,7 @@ class ANN(nn.Module):
 model = ANN(len(feature_columns))
 
 model.load_state_dict(
-    torch.load("../model/ann_model.pth", map_location="cpu")
+    torch.load(BASE_DIR / "../model/ann_model.pth", map_location="cpu")
 )
 
 model.eval()
