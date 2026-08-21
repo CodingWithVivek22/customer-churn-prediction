@@ -79,9 +79,15 @@ form.addEventListener("submit", async function (event) {
             document.getElementById("PaymentMethod").value
     };
 
+    const API_URL =
+        window.location.hostname === "localhost" ||
+            window.location.hostname === "127.0.0.1"
+            ? "http://127.0.0.1:8000"
+            : "https://customer-churn-prediction-exkn.onrender.com";
+
     try {
 
-        const response = await fetch("https://customer-churn-prediction-exkn.onrender.com/predict", {
+        const response = await fetch(`${API_URL}/predict`, {
 
             method: "POST",
 
